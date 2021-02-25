@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Roboto:wght@700&display=swap" rel="stylesheet">
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+    
 p {
   display: inline;
   font-size: 35px;
@@ -18,51 +20,59 @@ p {
   font-family: Roboto;
   font-weight: 900;
   margin-bottom: 50px;
-   color: #f31138;
+   color: #f3061cad;
 }
 body{
     
     left: 0;
-    line-height: 50px;
-        line-height: 154%;
-    margin-top: -100px;
+    line-height: 20px;
+        
+    margin-top: -700px;
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 40%;
     width: 100%;
-
     background-color: white;
 margin:25px 22px 55px 55px;
 }
 span{
-    font-size: 35px;
-    font-weight: normal;
+    font-size: 30px;
+    font-weight: 500;
     font-family: Lato;
     text-decoration-thickness:0.12em;
+
 }
 a{
-    font-size: 20px;
+    font-size: 15px;
     font-family:  Lato;
     color: black;
-    font-weight: normal;
+    font-weight: 500;
+    text-decoration:none;
+
 }
 r{
-    font-family: Roboto,"Open Sans";
+    font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
-    color: #f31138; 
+    color: #f3061cad; 
      text-decoration-thickness:15px;
      font-size: 40px;
      font-stretch:expanded;
 
 
 }
+a.underline{
+     display: inline-block;
+    border-bottom: 2px solid;
+    padding-bottom: 0;
+    line-height: 75%;
+}
 </style>
 </head>
 <body>
-    <!-- <p id="days"></p>
-    <p id="hours"></p> -->
-    <r>Hello User!<br></r>
-     <span>Our service will be ready in</span>
+    
+    <r>Hello User!</r><br>
+
+    <br> <span>Our service will be ready in</span>
     <p id="mins"></p>
     <p id="secs"></p>
     <h2 id="end"></h2>
@@ -76,15 +86,11 @@ r{
     var now = new Date().getTime();
     var timeleft = countDownDate - now;
         
-    // Calculating the days, hours, minutes and seconds left
-    /*var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));*/
+    
     var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
         
-    // Result is output to the specific element
-    /*document.getElementById("days").innerHTML = days + "d "
-    document.getElementById("hours").innerHTML = hours + "h " */
+    
     document.getElementById("mins").innerHTML = minutes +":" 
     document.getElementById("secs").innerHTML = seconds 
         
@@ -95,10 +101,10 @@ r{
         document.getElementById("hours").innerHTML = "" */
         document.getElementById("mins").innerHTML = ""
         document.getElementById("secs").innerHTML = ""
-        document.getElementById("end").innerHTML = "TIME UP!!";
+        // document.getElementById("end").innerHTML = "TIME UP!!";
     }
     }, 1000);
     </script>
-    <a href="#">Logout</a>
+    <a href="#" class="underline">Logout</a>
 </body>
 </html>
