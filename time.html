@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Source+Sans+Pro:wght@490;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Roboto:wght@700&display=swap" rel="stylesheet">
+<style>
+p {
+  display: inline;
+  font-size: 35px;
+  margin-top: 25px;
+  font-family: Roboto;
+  font-weight: 900;
+  margin-bottom: 50px;
+   color: #f31138;
+}
+body{
+    
+    left: 0;
+    line-height: 50px;
+        line-height: 154%;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+
+    background-color: white;
+margin:25px 22px 55px 55px;
+}
+span{
+    font-size: 35px;
+    font-weight: normal;
+    font-family: Lato;
+    text-decoration-thickness:0.12em;
+}
+a{
+    font-size: 20px;
+    font-family:  Lato;
+    color: black;
+    font-weight: normal;
+}
+r{
+    font-family: Roboto,"Open Sans";
+    font-weight: bolder;
+    color: #f31138; 
+     text-decoration-thickness:15px;
+     font-size: 40px;
+     font-stretch:expanded;
+
+
+}
+</style>
+</head>
+<body>
+    <!-- <p id="days"></p>
+    <p id="hours"></p> -->
+    <r>Hello User!<br></r>
+     <span>Our service will be ready in</span>
+    <p id="mins"></p>
+    <p id="secs"></p>
+    <h2 id="end"></h2>
+    <script>
+    // The data/time we want to countdown to
+    var countDownDate = new Date("Jul 25, 2021 16:37:52").getTime();
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+        
+    // Calculating the days, hours, minutes and seconds left
+    /*var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));*/
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    // Result is output to the specific element
+    /*document.getElementById("days").innerHTML = days + "d "
+    document.getElementById("hours").innerHTML = hours + "h " */
+    document.getElementById("mins").innerHTML = minutes +":" 
+    document.getElementById("secs").innerHTML = seconds 
+        
+    // Display the message when countdown is over
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        /*document.getElementById("days").innerHTML = ""
+        document.getElementById("hours").innerHTML = "" */
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        document.getElementById("end").innerHTML = "TIME UP!!";
+    }
+    }, 1000);
+    </script>
+    <a href="#">Logout</a>
+</body>
+</html>
