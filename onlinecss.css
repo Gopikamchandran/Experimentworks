@@ -101,6 +101,31 @@ button {
 	text-transform: none;
 	/*transition: transform 80ms ease-in;*/
 }
+ 
+#rpassword {
+  border: 2px solid currentcolor;
+
+}
+/*#rpassword:invalid {
+  border: 2px dashed red;
+}*/
+#rpassword:invalid:focus {
+  background-image: linear-gradient(pink, lightgreen);
+}
+#error-nwl
+{
+	font-size: 10px;
+	
+}
+#error-nwl:valid
+{
+	
+	display: none;
+}
+#error-nwl:invalid:focus{
+	
+	font-size: 5px;
+}
 
 
 form {
